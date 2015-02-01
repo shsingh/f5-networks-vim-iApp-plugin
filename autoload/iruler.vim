@@ -50,7 +50,7 @@ def location(host):
 def get_name():
     ''' Returns the current rule name in the buffer, minus the extension '''
     buf = vim.current.buffer
-    rule_name = os.path.basename(buf.name).replace('.irul','')
+    rule_name = os.path.basename(buf.name).replace('.irule','')
     return rule_name
 
 def get_creds():
@@ -278,7 +278,7 @@ rule_name = clean_name(vim.current.line)
 
 # Delete the rule list buffer to save space. 
 vim.command('pc')
-vim.command(':e ' + rule_name + '.irul')
+vim.command(':e ' + rule_name + '.irule')
 buf2 = vim.current.buffer
 buf2[:] = [x.encode('utf8') for x in open_rule(clean_name(raw_name))]
 create_rule = False
@@ -294,12 +294,12 @@ python << EOF
 '''
 Simple func to toggle create_rule to true.
 If the func is called, open a new blank
-screen and set the filetype to irul so
+screen and set the filetype to irule so
 syntax highlights will work.
 '''
 
 vim.command(':enew')
-vim.command('set filetype=irul')
+vim.command('set filetype=irule')
 create_rule = True
 EOF
 endfunction

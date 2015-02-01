@@ -3,7 +3,7 @@
 " HomePage:     https://github.com/wfaulk/iRuler.vim
 " Version:      0.2.1
 
-" Most everything in autoload/iruler.vim
+" Most everything in autoload/iRuler.vim
 
 com! -nargs=? F5Connect     call iruler#Connect(<args>)
 com! -nargs=? F5PubRule     call iruler#PubRule(<args>)
