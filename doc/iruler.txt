@@ -1,10 +1,10 @@
-*iruler.txt* Remote Editing of F5 BigIP iRules with vim
+*iRuler.txt* Remote Editing of F5 BigIP iRules with vim
 
 This module requires a python-enabled vim, >=2.4.4 or higher, and
 pycontrol version 2. See DevCentral for details on installing and
 using pycontrol v2.
  
-Commands:                                  *iruler-commands*
+Commands:                                  *iRuler-commands*
 :F5Connect
 :Co[nnect] {IP or hostname}
     Connect to a system. You will be prompted for username and password.

@@ -5,15 +5,15 @@
 
 " Most everything in autoload/iRuler.vim
 
-com! -nargs=? F5Connect     call iruler#Connect(<args>)
-com! -nargs=? F5PubRule     call iruler#PubRule(<args>)
-com! -nargs=0 F5GetRules    call iruler#GetRules(<args>)
-com! -nargs=0 F5OpenRule    call iruler#OpenRule(<args>)
-com! -nargs=0 F5NewRule     call iruler#NewRule(<args>)
-com! -nargs=1 F5Partition   call iruler#Partition(<args>)
-com! -nargs=0 F5WriteConfig call iruler#WriteConfig(<args>)
-com! -nargs=1 F5ApplyRule   call iruler#ApplyRule(<args>)
-com! -nargs=+ F5DeleteRule  call iruler#DeleteRule(<args>)
+com! -nargs=? F5Connect     call iRuler#Connect(<args>)
+com! -nargs=? F5PubRule     call iRuler#PubRule(<args>)
+com! -nargs=0 F5GetRules    call iRuler#GetRules(<args>)
+com! -nargs=0 F5OpenRule    call iRuler#OpenRule(<args>)
+com! -nargs=0 F5NewRule     call iRuler#NewRule(<args>)
+com! -nargs=1 F5Partition   call iRuler#Partition(<args>)
+com! -nargs=0 F5WriteConfig call iRuler#WriteConfig(<args>)
+com! -nargs=1 F5ApplyRule   call iRuler#ApplyRule(<args>)
+com! -nargs=+ F5DeleteRule  call iRuler#DeleteRule(<args>)
 
 " Original vim-iruler commands
 com! Co           F5Connect
