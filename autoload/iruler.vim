@@ -3,12 +3,12 @@
 " HomePage:     https://github.com/wfaulk/iRuler.vim
 " Version:      0.2.1
 
-" Most code stolen shamefully from vim-iruler; existing attributions left
+" Most code stolen shamefully from vim-iRuler; existing attributions left
 " intact
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pyfunc.vim, version 0.1.1. This file provides the main 
-" functionality provided by the vim-iruler plugins.
+" functionality provided by the vim-iRuler plugins.
 " If you modify this, please share your work!
 " Contributors: Matt Cauthorn, Jason Rahm
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -17,7 +17,7 @@ py import vim
 py import os.path
 py libpath = os.path.join(os.path.dirname(os.path.dirname(vim.eval("expand('<sfile>:p')"))), 'pylibs')
 
-function! iruler#Init()
+function! iRuler#Init()
 let s:initialized = 1
 " Flag noting if the BigIP has changes not saved to disk
 let s:needsave = 0
@@ -110,14 +110,14 @@ endfunction
 """""""""""""""""""""""""""""
 " Define our vim functions
 """""""""""""""""""""""""""""
-function! iruler#Connect(...)
+function! iRuler#Connect(...)
 "Login function. Points to your favorite BigIP.
 if a:0 > 1
     echo "Specify at most one BigIP to connect to"
     return -1
 endif
 if !exists('s:initialized')
-    call iruler#Init()
+    call iRuler#Init()
 endif
 if a:0 == 0
     let s:hostname = input("BigIP hostname: ")
@@ -135,9 +135,9 @@ ltm, gtm = get_objects(host,user,passwd)
 EOF
 endfunction
 
-function! iruler#PubRule(...)
+function! iRuler#PubRule(...)
 if !exists('s:initialized')
-    call iruler#Init()
+    call iRuler#Init()
 endif
 python << EOF
 '''Publish the rule you're working on.'''
@@ -211,9 +211,9 @@ EOF
 endfunction
 
 """""""""""""""""""""
-function! iruler#GetRules()
+function! iRuler#GetRules()
 if !exists('s:initialized')
-    call iruler#Init()
+    call iRuler#Init()
 endif
 
 python << EOF
@@ -261,9 +261,9 @@ EOF
 
 endfunction
 """""""""""""""""""""
-function! iruler#OpenRule()
+function! iRuler#OpenRule()
 if !exists('s:initialized')
-    call iruler#Init()
+    call iRuler#Init()
 endif
 python << EOF
 
@@ -286,9 +286,9 @@ vim.command("set nomodified")
 EOF
 endfunction
 
-function! iruler#NewRule()
+function! iRuler#NewRule()
 if !exists('s:initialized')
-    call iruler#Init()
+    call iRuler#Init()
 endif
 python << EOF
 '''
@@ -305,9 +305,9 @@ EOF
 endfunction
 
 
-function! iruler#Partition(name)
+function! iRuler#Partition(name)
 if !exists('s:initialized')
-    call iruler#Init()
+    call iRuler#Init()
 endif
 python << EOF
 '''
@@ -320,9 +320,9 @@ print "Current partition is: %s" % bmp.Management.Partition.get_active_partition
 EOF
 endfunction
 
-function! iruler#WriteConfig()
+function! iRuler#WriteConfig()
 if !exists('s:initialized')
-    call iruler#Init()
+    call iRuler#Init()
 endif
 python << EOF
 try:
@@ -336,9 +336,9 @@ except Exception,e:
 EOF
 endfunction
 
-function! iruler#ApplyRule(virtual_server)
+function! iRuler#ApplyRule(virtual_server)
 if !exists('s:initialized')
-    call iruler#Init()
+    call iRuler#Init()
 endif
 python << EOF
 '''
@@ -369,9 +369,9 @@ EOF
 endfunction
 
 
-function! iruler#DeleteRule(...)
+function! iRuler#DeleteRule(...)
 if !exists('s:initialized')
-    call iruler#Init()
+    call iRuler#Init()
 endif
 python << EOF
 ''' Deletes a rule. '''
