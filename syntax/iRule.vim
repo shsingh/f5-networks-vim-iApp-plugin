@@ -289,6 +289,9 @@ call s:pred_w_subcmd('memory',      '','active break info init onexit tag trace 
 call s:pred_w_subcmd('seek',        '','start current end')
 call s:pred_w_subcmd('update',      '','idletasks')
 
+" iRule events
+call s:pred_w_subcmd('when',        'iRuleEvent','CLIENT_ACCEPTED CLIENT_DATA HTTP_REQUEST HTTP_REQUEST_DATA')
+
 " Predicates with subcommands with switches.
 call s:pred_w_switches('names',     'tclArrayNames','"-\(exact\|glob\|regexp\)\>"')
 call s:pred_w_subcmd('array',       'tclArrayNames','anymore donesearch exists get nextelement set size startsearch statistics unset')
@@ -435,12 +438,12 @@ syn keyword iRuleKeyword getfield htonl htons imid ip_protocol ip_tos ip_ttl LIN
 syn keyword iRuleKeyword matchclass md5 node ntohl ntohs peer persist pool proc
 syn keyword iRuleKeyword priority rateclass redirect reject relate_client relate_server remote_addr return rmd160 server_addr
 syn keyword iRuleKeyword server_port serverside session sha1 sha256 sha384 sha512 snat snatpool substr timing use
-syn keyword iRuleKeyword virtual vlan_id when wideip findstr pool server_port ttl reject crc32 forward
+syn keyword iRuleKeyword virtual vlan_id wideip findstr pool server_port ttl reject crc32 forward
 syn keyword iRuleKeyword host noerror discard log substr client_port cname drop active_members whereis
 
 " Now match all of our '::' commands.
 " Try to match all of the events here.
-syn keyword iRuleEvent CLIENT_ACCEPTED CLIENT_DATA HTTP_REQUEST HTTP_REQUEST_DATA
+"syn keyword iRuleEvent CLIENT_ACCEPTED CLIENT_DATA HTTP_REQUEST HTTP_REQUEST_DATA
 "
 " MC - Pick up here! It's not matching the ::
 syn match iRuleCommand "[A-Z]\+_\{1}[A-Z]\+"
@@ -554,7 +557,7 @@ HiLink perlPODProc                      Comment
 " ------------------------
 "  Highlights: - iRule
 " -----------------------
-HiLink iRuleEvent                       Special
+"HiLink iRuleEvent                       Special
 HiLink iRuleKeyword                     Statement
 HiLink iRuleCommand                     Macro
 HiLink iRuleBracket                     Typedef
